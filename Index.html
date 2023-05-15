@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!--Parte HTML-->
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="index.css" rel="stylesheet">
+  <title>Contador</title>
+</head>
+<body>
+  <h1>Contador</h1>
+  <p>By Matheus Ferreira</p>
+  <p class="counter-preview">0</p>
+  <div class="buttons" id="allBtns">
+    <button class="Diminuir" id="Diminuir">Diminuir</button>
+    <button class="Resetar" id="Resetar">Resetar</button>
+    <button class="Acresentar" id="Acresentar">Acresentar</button>
+  </div>
+</body>
+
+
+<script>// parte Java Script:
+
+  const display = document.querySelector('.counter-preview');
+  const allBtns = document.querySelector('#allBtns');
+  
+  allBtns.addEventListener('click', contar);
+  
+  let value = 0;
+  
+  function contar(e){
+    var btn = e.target.id;
+      if (btn === 'Acresentar'){
+        value += 1;
+      } else if (btn === 'Diminuir') {
+        value -= 1;
+      } else {
+        value = 0;
+      }
+      display.textContent = value;
+  }
+  
+  </script>
+</html>
